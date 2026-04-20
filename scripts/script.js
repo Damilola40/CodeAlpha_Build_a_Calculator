@@ -100,12 +100,14 @@ const key = document.addEventListener("keydown", (event) => {
             break;
         case "+":
         case "-":
-        case "*":
         case "/":
             handleOperator(event.key);
             break;
+        case "*":
+            handleOperator("×");
+            break;
     }
-    if (isNaN(event.key) || event.key === ".") {
-        appendNumbers(event.key)
+    if (!isNaN(event.key) || event.key === ".") {
+        appendNumbers(event.key);  
     }
 })
